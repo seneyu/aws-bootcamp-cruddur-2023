@@ -60,7 +60,7 @@ aws cloudwatch put-metric-alarm --cli-input-json file://aws/json/alarm_config.js
 
 [Create budget via AWS CLI](https://docs.aws.amazon.com/cli/latest/reference/budgets/create-budget.html)
 
-I use the following command to create a budget.
+I used the following command to create a budget.
 
 ```bash
 aws budgets create-budget \
@@ -71,6 +71,16 @@ aws budgets create-budget \
 
 I created my own budget alarm for $1 as an example.
 ![Image of the Budget Alarm](assets/week-0-budget-alarm.png)
+
+### EventBridge
+
+[Amazon EventBridge](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-get-started.html)
+
+I used EventBridge to connecct the AWS Health Dashboard to SNS and send notification when there is a service health issue.
+
+First, I created a new standard SNS topic for receiving service health issue notifications and subscribed to it. After that, I configured EventBridge to connect to the SNS topic created.
+
+![EventBridge](assets/week-0-eventbridge.png)
 
 ### Recreate Logical Architectual Diagram in Lucid Charts
 
